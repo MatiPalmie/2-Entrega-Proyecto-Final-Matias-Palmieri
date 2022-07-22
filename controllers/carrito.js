@@ -58,7 +58,7 @@ class Carrito {
         try {
             const product = await productos.find({id: idProducto});
             const cart = await carritos.find({_id: id});
-            let carritoAdd = await cart[0].productos.push(product);
+            let carritoAdd = cart[0].productos.push(product);
             console.log(carritoAdd)
 
             await carritos.updateOne({_id: cart[0]._id},carritoAdd);
